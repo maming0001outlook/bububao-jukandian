@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        COOKIES_SPLIT: ${{ COOKIES_SPLIT }}
-        QQREADAPP_HEADER: ${{ QQREADAPP_HEADER  }}
+        COOKIES_SPLIT: ${{ secrets.COOKIES_SPLIT }}
+        QQREADAPP_HEADER: ${{ secrets.QQREADAPP_HEADER  }}
         QQREADAPP_VIDEOHD: ${{ secrets.QQREADAPP_VIDEOHD }}
     steps:
       - name: Clone
