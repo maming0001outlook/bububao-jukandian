@@ -35,8 +35,8 @@ jobs:
           cd ~/JavaScript
           for i in {1..10}
           do
+              echo $i
               node Task/iboxpay.js
-              sleep 2m
           done
         env:
           
