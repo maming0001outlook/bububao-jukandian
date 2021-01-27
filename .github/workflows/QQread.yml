@@ -1,0 +1,40 @@
+name: QQread
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '*/30 * * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        COOKIES_SPLIT: ${{ COOKIES_SPLIT }}
+        QQREADAPP_HEADER: ${{ QQREADAPP_HEADER  }}
+        QQREADAPP_VIDEOHD: ${{ secrets.QQREADAPP_VIDEOHD }}
+    steps:
+      - name: Clone
+        run: |
+          git clone https://github.com/ziye12/JavaScript.git ~/JavaScript
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          cd ~/JavaScript
+          npm install
+      - name: 'Run QQread'
+        if: env.QQREADAPP_HEADER
+        run: |
+          cd ~/JavaScript
+          node Task/QQread.js
+        env:
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          BARK_SOUND: ${{ secrets.BARK_SOUND }}
+          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
