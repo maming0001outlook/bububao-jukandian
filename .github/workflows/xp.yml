@@ -29,21 +29,72 @@ jobs:
         run: |
           cd ~/JavaScript
           npm install
-      - name: 'RUN [xp] '
+      - name: 'RUN xp1 '
         if: env.XP_iboxpayHEADER
         run: |
           cd ~/JavaScript
-          for i in {1..10}
-          do
-              echo $i
-              node Task/iboxpay.js
-          done
-        env:
+          node Task/iboxpay.js
+      - name: 'RUN xp2 '
+        if: env.XP_iboxpayHEADER
+        run: |
+          cd ~/JavaScript
+          node Task/iboxpay.js
+      - name: 'RUN xp3 '
+        if: env.XP_iboxpayHEADER
+        run: |
+          cd ~/JavaScript
+          node Task/iboxpay.js
+      - name: 'RUN xp4 '
+        if: env.XP_iboxpayHEADER
+        run: |
+          cd ~/JavaScript
+          node Task/iboxpay.js
+      - name: 'RUN xp5 '
+        if: env.XP_iboxpayHEADER
+        run: |
+          cd ~/JavaScript
+          node Task/iboxpay.js
+      - name: 'RUN xp6 '
+        if: env.XP_iboxpayHEADER
+        run: |
+          cd ~/JavaScript
+          node Task/iboxpay.js
+      - name: 'RUN xp7 '
+        if: env.XP_iboxpayHEADER
+        run: |
+          cd ~/JavaScript
+          node Task/iboxpay.js
+      - name: 'RUN xp8 '
+        if: env.XP_iboxpayHEADER
+        run: |
+          cd ~/JavaScript
+          node Task/iboxpay.js
+      - name: 'RUN xp9 '
+        if: env.XP_iboxpayHEADER
+        run: |
+          cd ~/JavaScript
+          node Task/iboxpay.js
+      - name: 'RUN xp10 '
+        if: env.XP_iboxpayHEADER
+        run: |
+          cd ~/JavaScript
+          node Task/iboxpay.js
           
-          PUSH_KEY: ${{ secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          BARK_SOUND: ${{ secrets.BARK_SOUND }}
-          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
-          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+#       - name: 'RUN [xp] '
+#         if: env.XP_iboxpayHEADER
+#         run: |
+#           cd ~/JavaScript
+#           for i in {1..10}
+#           do
+#               echo $i
+#               node Task/iboxpay.js
+#           done
+#         env:
+          
+#           PUSH_KEY: ${{ secrets.PUSH_KEY }}
+#           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+#           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+#           TG_USER_ID: ${{ secrets.TG_USER_ID }}
+#           BARK_SOUND: ${{ secrets.BARK_SOUND }}
+#           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+#           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
