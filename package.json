@@ -1,0 +1,23 @@
+{
+  "name": "T",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/T-playground/actions3.git"
+  },
+  "keywords": ["hello"],
+  "author": "T",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "got": "^11.7.0",
+    "http-server": "^0.12.3",
+    "tough-cookie": "^4.0.0",
+    "download": "^8.0.0"
+  }
+}
